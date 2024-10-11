@@ -121,7 +121,7 @@ class PLModule(pl.LightningModule):
         """
         x, files, labels, devices, cities = train_batch
         labels = labels.type(torch.LongTensor)
-        lebels = labels.to(self.device)
+        labels = labels.to(self.device)
         x = self.mel_forward(x)  # we convert the raw audio signals into log mel spectrograms
 
         if self.config.mixstyle_p > 0:
