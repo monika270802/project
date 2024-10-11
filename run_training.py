@@ -225,7 +225,7 @@ class PLModule(pl.LightningModule):
     def test_step(self, test_batch, batch_idx):
         x, files, labels, devices, cities = test_batch
         labels = labels.type(torch.LongTensor)
-        lebels = labels.to(self.device)
+        labels = labels.to(self.device)
 
         # maximum memory allowance for parameters: 128 KB
         # baseline has 61148 parameters -> we can afford 16-bit precision
